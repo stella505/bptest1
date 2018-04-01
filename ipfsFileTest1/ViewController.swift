@@ -33,39 +33,39 @@ class ViewController: NSViewController {
     
     
     @IBAction func LoginButton(_ sender: Any) {
-        if(_login_button.title?.text == "Logout")
-        {
-            let preferences = UserDefaults.standard
-            preferences.removeObject(forKey:"session")
-            LoginToDo()
-        }
-        let UserName = _userName.accessibilityValue()
-        let Password = _password.accessibilityContents()
+//        if(_login_button.title?.text == "Logout")
+//        {
+//            let preferences = UserDefaults.standard
+//            preferences.removeObject(forKey:"session")
+//            LoginToDo()
+//        }
+        let UserName = _userName.stringValue
+        let Password = _password.stringValue
         if (UserName == "" || Password == "")
         {
             return
         }
-        DoLogin(UserName!,Password!)
+        DoLogin(UserName,Password)
     }
-//    func DoLogin(_ user:String,_ psw:String)
-//    {
-//        let url = URL(String:"http")
-//        let session = UPLSession.shared
-//
-//        let request = NSMutableURLRequest(url:url!)
-//        request.httpMethod = "POST"
-//        let paramToSend = "username" + user + "&password=" + psw
-//        request.httpBody = paramToSend.data(using: String.Encoding.utf8)
-//        let task = session.dataTask(with:request as URLRequest, completionHandler:
-//        {
-//            (data,response,error) in
-//            guard let _:Data = data else
-//            {
-//                return
-//            }
-//
-//        })
-//    }
+    func DoLogin(_ user:String,_ psw:String)
+    {
+        let url = NSURL(string:"http://www.kaleidosblog.com/tutorial/login/api/login")
+        let session = URLSession.shared
+
+        let request = NSMutableURLRequest(url:url! as URL)
+        request.httpMethod = "POST"
+        let paramToSend = "username" + user + "&password=" + psw
+        request.httpBody = paramToSend.data(using: String.Encoding.utf8)
+        let task = session.dataTask(with:request as URLRequest, completionHandler:
+        {
+            (data,response,error) in
+            guard let _:Data = data else
+            {
+                return
+            }
+
+        })
+    }
     
     override var representedObject: Any? {
         didSet {
