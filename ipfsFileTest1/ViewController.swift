@@ -16,6 +16,9 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var _userNameLabel: NSTextField!
+    @IBOutlet weak var _passwordLabel: NSTextField!
+    
     @IBOutlet weak var _userName: NSTextField!
     @IBOutlet weak var _password: NSSecureTextField!
     @IBOutlet weak var _signUp_button: NSButton!
@@ -25,50 +28,44 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         let preferences = UserDefaults.standard
-        if(preferences.object(forKey: "session")!=nil)
-        {
-            LoginDone()
-        }else{
-            LoginToDo()
-        }
         // Do any additional setup after loading the view.
     }
-
+    
     
     @IBAction func LoginButton(_ sender: Any) {
-        if(_login_button.titleLabel?.text == "Logout")
+        if(_login_button.title?.text == "Logout")
         {
             let preferences = UserDefaults.standard
-            preferences.removeObject(forKey: "session")
+            preferences.removeObject(forKey:"session")
             LoginToDo()
         }
-        let UserName = _userName
-        let Password = _password
+        let UserName = _userName.accessibilityValue()
+        let Password = _password.accessibilityContents()
         if (UserName == "" || Password == "")
         {
             return
         }
         DoLogin(UserName!,Password!)
     }
-    func DoLogin(_ user:String,_ psw:String)
-    {
-        let url = URL(String:"http")
-        let session = UPLSession.shared
-        
-        let request = NSMutableURLRequest(url:url!)
-        request.httpMethod = "POST"
-        let paramToSend = "username" + user + "&password=" + psw
-        request.httpBody = paramToSend.data(using: String.Encoding.utf8)
-        let task = session.dataTask(with:request as URLRequest, completionHandler:
-        {
-            (data,response,error) in
-            guard let _:Data = data else
-            {
-                return
-            }
-            
-        })
-    }
+//    func DoLogin(_ user:String,_ psw:String)
+//    {
+//        let url = URL(String:"http")
+//        let session = UPLSession.shared
+//
+//        let request = NSMutableURLRequest(url:url!)
+//        request.httpMethod = "POST"
+//        let paramToSend = "username" + user + "&password=" + psw
+//        request.httpBody = paramToSend.data(using: String.Encoding.utf8)
+//        let task = session.dataTask(with:request as URLRequest, completionHandler:
+//        {
+//            (data,response,error) in
+//            guard let _:Data = data else
+//            {
+//                return
+//            }
+//
+//        })
+//    }
     
     override var representedObject: Any? {
         didSet {

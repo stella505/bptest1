@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
@@ -805,12 +805,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="522" height="266"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gX-Qo-8Ke">
-                                <rect key="frame" x="177" y="148.5" width="168" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gX-Qo-8Ke">
+                                <rect key="frame" x="161" y="90" width="168" height="86"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zFS-EF-d86">
-                                        <rect key="frame" x="0.0" y="59" width="168" height="22"/>
+                                        <rect key="frame" x="0.0" y="64" width="168" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cfo-Be-2hC">
                                                 <rect key="frame" x="-2" y="3" width="68" height="17"/>
@@ -832,6 +831,9 @@
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <connections>
+                                                        <action selector="_userNameTable:" target="XfG-lQ-9wD" id="WT6-5t-ZB4"/>
+                                                    </connections>
                                                 </textFieldCell>
                                             </textField>
                                         </subviews>
@@ -849,10 +851,10 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Net-YN-m8c">
-                                        <rect key="frame" x="3" y="29" width="163" height="22"/>
+                                        <rect key="frame" x="3" y="29" width="163" height="27"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GLM-gN-kif">
-                                                <rect key="frame" x="-2" y="3" width="63" height="17"/>
+                                                <rect key="frame" x="-2" y="5" width="63" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="59" id="drI-fI-dkj"/>
                                                     <constraint firstAttribute="height" constant="17" id="q5F-yN-43E"/>
@@ -864,7 +866,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1w9-sx-gDh">
-                                                <rect key="frame" x="67" y="0.0" width="96" height="22"/>
+                                                <rect key="frame" x="67" y="3" width="96" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="96" id="9JD-ij-JPB"/>
                                                     <constraint firstAttribute="height" constant="22" id="fmB-S0-Z49"/>
@@ -909,7 +911,7 @@
                                                 </buttonCell>
                                                 <connections>
                                                     <action selector="LoginButton:" target="XfG-lQ-9wD" id="xNI-gs-q2B"/>
-                                                    <segue destination="Tge-OY-Zwv" kind="custom" id="qvl-7E-q3X"/>
+                                                    <segue destination="Tge-OY-Zwv" kind="custom" id="XXP-e3-Bsb"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -927,6 +929,9 @@
                                         </customSpacing>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="Jq4-UZ-rxz"/>
+                                </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
@@ -939,6 +944,10 @@
                                 </customSpacing>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="8gX-Qo-8Ke" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="90" id="KU7-Gg-v3l"/>
+                            <constraint firstAttribute="bottom" secondItem="8gX-Qo-8Ke" secondAttribute="bottom" constant="90" id="bwe-2J-RLA"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="UserName" destination="cfo-Be-2hC" id="APE-pD-fZV"/>
@@ -946,6 +955,8 @@
                         <outlet property="_Password" destination="1w9-sx-gDh" id="hfl-xL-SR0"/>
                         <outlet property="_SignUp" destination="2ZB-7u-YKH" id="s4e-bg-7JE"/>
                         <outlet property="_UserName" destination="RwV-go-Qy7" id="uDw-ev-4Wm"/>
+                        <outlet property="_passwordLabel" destination="GLM-gN-kif" id="OrF-cb-RjX"/>
+                        <outlet property="_userNameLabe" destination="cfo-Be-2hC" id="1jh-LS-TNi"/>
                         <outlet property="use" destination="bWp-wN-MnM" id="9B5-Jf-dq6"/>
                     </connections>
                 </viewController>
@@ -988,7 +999,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S5N-F5-B5z">
-                                <rect key="frame" x="-6" y="193" width="165" height="61"/>
+                                <rect key="frame" x="-6" y="193" width="90" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bEz-Pg-Qbi"/>
                                 </constraints>
@@ -998,7 +1009,7 @@
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgh-NQ-sY0">
-                                <rect key="frame" x="197" y="203" width="45" height="17"/>
+                                <rect key="frame" x="196" y="224" width="45" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Ipfs id:" id="1F4-gm-o52">
                                     <font key="font" metaFont="system"/>
@@ -1007,7 +1018,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UIa-e6-H6H">
-                                <rect key="frame" x="263" y="177" width="181" height="43"/>
+                                <rect key="frame" x="262" y="198" width="181" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="0WP-hH-SEu">
                                     <font key="font" metaFont="system"/>
@@ -1016,7 +1027,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LKu-Mu-LQ2">
-                                <rect key="frame" x="197" y="118" width="71" height="17"/>
+                                <rect key="frame" x="196" y="148" width="71" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Ip address:" id="FvU-EF-sew">
                                     <font key="font" metaFont="system"/>
@@ -1025,27 +1036,9 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3TX-tH-0zn">
-                                <rect key="frame" x="274" y="113" width="170" height="22"/>
+                                <rect key="frame" x="273" y="143" width="170" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Tsl-qB-deN">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5A-ks-zaO">
-                                <rect key="frame" x="199" y="59" width="23" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="log" id="1hF-5g-ZKM">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wCa-OT-X2f">
-                                <rect key="frame" x="240" y="33" width="204" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="m0b-of-woL">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1067,6 +1060,24 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5A-ks-zaO">
+                                <rect key="frame" x="198" y="97" width="23" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="log" id="1hF-5g-ZKM">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wCa-OT-X2f">
+                                <rect key="frame" x="239" y="27" width="204" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="m0b-of-woL">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="S5N-F5-B5z" firstAttribute="top" secondItem="SWh-y3-Ipb" secondAttribute="top" id="N7W-PP-MqP"/>

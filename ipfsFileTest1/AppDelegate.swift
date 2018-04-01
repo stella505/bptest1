@@ -11,10 +11,15 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
+var masterViewController: ViewController!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        masterViewController = ViewController(nibName:NSNib.Name(rawValue: "ViewController"), bundle:nil)
+        
+//    NSWindow.init(contentViewController: NSViewController).addSubview(masterViewController.view)
+//
+//        masterViewController.view.frame = ( NSWindow.init(contentViewController:ViewController) as NSView).bounds
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
