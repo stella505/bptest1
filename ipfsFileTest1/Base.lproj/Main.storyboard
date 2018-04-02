@@ -702,22 +702,14 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="DXs-Ke-2s9">
             <objects>
-                <viewController id="Cx3-x7-eb9" sceneMemberID="viewController">
+                <viewController id="Cx3-x7-eb9" customClass="SignUpViewController" customModule="ipfsFileTest1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="UM6-4Y-VoP">
                         <rect key="frame" x="0.0" y="0.0" width="353" height="266"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8BY-IU-MqN">
-                                <rect key="frame" x="134" y="54" width="86" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Sign up" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hoH-cp-piV">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Szp-ko-KjW">
                                 <rect key="frame" x="84" y="210" width="81" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -790,8 +782,25 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8BY-IU-MqN">
+                                <rect key="frame" x="133" y="62" width="86" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Sign up" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hoH-cp-piV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="goToLastPage:" target="iMU-8n-CwL" id="95B-Cz-THb"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="_emailtable" destination="CGf-J4-d73" id="K7p-u0-J0b"/>
+                        <outlet property="_passwordtable" destination="jpQ-Dt-xdI" id="i9B-x6-RLZ"/>
+                        <outlet property="_regiontable" destination="LFG-bU-n4P" id="d1z-qd-vhc"/>
+                        <outlet property="_usernametable" destination="XhR-1O-LAY" id="OOE-eH-RHI"/>
+                    </connections>
                 </viewController>
                 <customObject id="iMU-8n-CwL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -911,7 +920,7 @@
                                                 </buttonCell>
                                                 <connections>
                                                     <action selector="LoginButton:" target="XfG-lQ-9wD" id="xNI-gs-q2B"/>
-                                                    <segue destination="Tge-OY-Zwv" kind="custom" id="XXP-e3-Bsb"/>
+                                                    <segue destination="Tge-OY-Zwv" kind="custom" id="KKp-LC-1Pc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -969,11 +978,11 @@
             <objects>
                 <viewController id="Tge-OY-Zwv" sceneMemberID="viewController">
                     <view key="view" id="9YZ-2q-OwY">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="475" height="266"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kCL-4t-6cW">
-                                <rect key="frame" x="139" y="148" width="173" height="32"/>
+                                <rect key="frame" x="139" y="115" width="173" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="IPFS daemon" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3bX-eZ-dxD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -988,7 +997,7 @@
                 </viewController>
                 <customObject id="jvM-Br-uZ8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="615"/>
+            <point key="canvasLocation" x="656.5" y="653"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="KyH-OA-9Ws">
@@ -999,7 +1008,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S5N-F5-B5z">
-                                <rect key="frame" x="-6" y="193" width="90" height="61"/>
+                                <rect key="frame" x="-6" y="193" width="165" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bEz-Pg-Qbi"/>
                                 </constraints>
@@ -1045,7 +1054,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zmS-D1-Tfs">
-                                <rect key="frame" x="-6" y="73" width="165" height="32"/>
+                                <rect key="frame" x="-6" y="115" width="165" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="connected peers" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9aj-Au-QSf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1053,7 +1062,7 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BD9-Im-1LA">
-                                <rect key="frame" x="-6" y="138" width="165" height="32"/>
+                                <rect key="frame" x="-6" y="160" width="165" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="IPFS bootstat" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cP2-Wn-Ecp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1078,6 +1087,26 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tI4-RX-jcR">
+                                <rect key="frame" x="-6" y="58" width="165" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NgA-V5-OaU"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Transfer Files" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qbi-hq-klN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5f-Kh-Lt3">
+                                <rect key="frame" x="-6" y="13" width="165" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fJk-Id-BMc"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="close IPFS" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nqM-xm-Qex">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="S5N-F5-B5z" firstAttribute="top" secondItem="SWh-y3-Ipb" secondAttribute="top" id="N7W-PP-MqP"/>
@@ -1087,7 +1116,7 @@
                 </viewController>
                 <customObject id="OqB-e6-nIE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="657" y="994"/>
+            <point key="canvasLocation" x="656.5" y="1040"/>
         </scene>
         <!--LoginFail-->
         <scene sceneID="Lx9-xI-d5q">
@@ -1122,7 +1151,7 @@
                 </viewController>
                 <customObject id="eWe-TG-Nzh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-461.5" y="1059"/>
+            <point key="canvasLocation" x="-462" y="1040"/>
         </scene>
     </scenes>
 </document>
