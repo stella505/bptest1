@@ -14,6 +14,7 @@
 		83835555206B4F77001B2BFC /* ipfsFileTest1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83835554206B4F77001B2BFC /* ipfsFileTest1Tests.swift */; };
 		83835560206B4F77001B2BFC /* ipfsFileTest1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8383555F206B4F77001B2BFC /* ipfsFileTest1UITests.swift */; };
 		838510C92071E52A00F1E90D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838510C82071E52A00F1E90D /* SignUpViewController.swift */; };
+		838510CC2071EBA900F1E90D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 838510CB2071EBA900F1E90D /* libsqlite3.0.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		8383555F206B4F77001B2BFC /* ipfsFileTest1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ipfsFileTest1UITests.swift; sourceTree = "<group>"; };
 		83835561206B4F77001B2BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		838510C82071E52A00F1E90D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		838510CB2071EBA900F1E90D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				838510CC2071EBA900F1E90D /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +85,7 @@
 				83835553206B4F77001B2BFC /* ipfsFileTest1Tests */,
 				8383555E206B4F77001B2BFC /* ipfsFileTest1UITests */,
 				8383553F206B4F77001B2BFC /* Products */,
+				838510CA2071EBA800F1E90D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +129,14 @@
 				83835561206B4F77001B2BFC /* Info.plist */,
 			);
 			path = ipfsFileTest1UITests;
+			sourceTree = "<group>";
+		};
+		838510CA2071EBA800F1E90D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				838510CB2071EBA900F1E90D /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

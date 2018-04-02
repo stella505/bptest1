@@ -788,10 +788,11 @@
                                 <buttonCell key="cell" type="push" title="Sign up" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hoH-cp-piV">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <connections>
-                                        <action selector="goToLastPage:" target="iMU-8n-CwL" id="95B-Cz-THb"/>
-                                    </connections>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="SignUPButton:" target="Cx3-x7-eb9" id="BDe-y5-v5y"/>
+                                    <segue destination="XfG-lQ-9wD" kind="show" identifier="signupView" customClass="SignUpViewController" customModule="ipfsFileTest1" customModuleProvider="target" id="JBS-V7-Jay"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
@@ -909,7 +910,7 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <connections>
-                                                    <segue destination="Cx3-x7-eb9" kind="show" id="v2V-mY-xAf"/>
+                                                    <segue destination="Cx3-x7-eb9" kind="show" id="OW6-SJ-l45"/>
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XXt-tw-DWH">
@@ -920,7 +921,7 @@
                                                 </buttonCell>
                                                 <connections>
                                                     <action selector="LoginButton:" target="XfG-lQ-9wD" id="xNI-gs-q2B"/>
-                                                    <segue destination="Tge-OY-Zwv" kind="custom" id="KKp-LC-1Pc"/>
+                                                    <segue destination="Tge-OY-Zwv" kind="modal" identifier="LoginSegue" customClass="ViewController" customModule="ipfsFileTest1" customModuleProvider="target" id="KKp-LC-1Pc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1154,4 +1155,7 @@
             <point key="canvasLocation" x="-462" y="1040"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JBS-V7-Jay"/>
+    </inferredMetricsTieBreakers>
 </document>
