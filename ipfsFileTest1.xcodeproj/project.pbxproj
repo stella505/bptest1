@@ -14,7 +14,8 @@
 		8339A1FF207886D900EBE3E7 /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339A1FE207886D900EBE3E7 /* SQLiteDB.swift */; };
 		8339A2012078882F00EBE3E7 /* data.db in Resources */ = {isa = PBXBuildFile; fileRef = 8339A2002078882E00EBE3E7 /* data.db */; };
 		8339A2052078DA9B00EBE3E7 /* daemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339A2042078DA9B00EBE3E7 /* daemonViewController.swift */; };
-		8339A2072078F1C400EBE3E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339A2062078F1C400EBE3E7 /* HomeViewController.swift */; };
+		834258A62084CC8800D67F1E /* theFirstPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834258A52084CC8800D67F1E /* theFirstPage.swift */; };
+		834258AA2084DD0100D67F1E /* TransferPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834258A92084DD0100D67F1E /* TransferPage.swift */; };
 		83835542206B4F77001B2BFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83835541206B4F77001B2BFC /* AppDelegate.swift */; };
 		83835544206B4F77001B2BFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83835543206B4F77001B2BFC /* ViewController.swift */; };
 		83835546206B4F77001B2BFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83835545206B4F77001B2BFC /* Assets.xcassets */; };
@@ -51,7 +52,8 @@
 		8339A1FE207886D900EBE3E7 /* SQLiteDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
 		8339A2002078882E00EBE3E7 /* data.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.db; sourceTree = SOURCE_ROOT; };
 		8339A2042078DA9B00EBE3E7 /* daemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daemonViewController.swift; sourceTree = "<group>"; };
-		8339A2062078F1C400EBE3E7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		834258A52084CC8800D67F1E /* theFirstPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theFirstPage.swift; sourceTree = "<group>"; };
+		834258A92084DD0100D67F1E /* TransferPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPage.swift; sourceTree = "<group>"; };
 		8383553E206B4F77001B2BFC /* ipfsFileTest1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ipfsFileTest1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83835541206B4F77001B2BFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83835543206B4F77001B2BFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +144,8 @@
 				838510C82071E52A00F1E90D /* SignUpViewController.swift */,
 				8339A1F6207881BB00EBE3E7 /* SQLManager.swift */,
 				8339A2042078DA9B00EBE3E7 /* daemonViewController.swift */,
-				8339A2062078F1C400EBE3E7 /* HomeViewController.swift */,
+				834258A52084CC8800D67F1E /* theFirstPage.swift */,
+				834258A92084DD0100D67F1E /* TransferPage.swift */,
 			);
 			path = ipfsFileTest1;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				8383553A206B4F77001B2BFC /* Sources */,
 				8383553B206B4F77001B2BFC /* Frameworks */,
 				8383553C206B4F77001B2BFC /* Resources */,
+				83EAC5BA20839A1200C3F0CC /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -302,6 +306,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		83EAC5BA20839A1200C3F0CC /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "echo \"download the ipfs...\"\nmkdir ipfsSrc\ncd ipfsSrc\nwget https://dist.ipfs.io/go-ipfs/v0.4.14/go-ipfs_v0.4.14_darwin-amd64.tar.gz\n\necho \"decompressing...\"\ntar xvfz go-ipfs.tar.gz\n\necho \"install...\"\ncd go-ipfs\n./install.sh\n\necho \"initial ipfs\"\nipfs init\n\necho \"daemoning...\"\nipfs daemon";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8383553A206B4F77001B2BFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -312,7 +333,8 @@
 				83835544206B4F77001B2BFC /* ViewController.swift in Sources */,
 				8339A1FD207886A200EBE3E7 /* SQLiteBase.swift in Sources */,
 				8339A2052078DA9B00EBE3E7 /* daemonViewController.swift in Sources */,
-				8339A2072078F1C400EBE3E7 /* HomeViewController.swift in Sources */,
+				834258AA2084DD0100D67F1E /* TransferPage.swift in Sources */,
+				834258A62084CC8800D67F1E /* theFirstPage.swift in Sources */,
 				8339A1F7207881BB00EBE3E7 /* SQLManager.swift in Sources */,
 				8339A1F92078860300EBE3E7 /* CloudDB.swift in Sources */,
 				83835542206B4F77001B2BFC /* AppDelegate.swift in Sources */,

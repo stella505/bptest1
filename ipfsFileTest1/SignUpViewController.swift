@@ -21,7 +21,7 @@ class SignUpViewController: NSViewController  {
         super.viewDidLoad()
         
         db = SQLiteDB.shared
-        db.open(dbPath: "~/Desktop/ipfsFileTest1/data.db", copyFile: true)
+        //db.open(dbPath: "~/Desktop/ipfsFileTest1/data.db", copyFile: true)
         db.execute(
             sql: "create table if not exists usertable(id integer primary key, userName varchar(20), password varchar(12), email varchar(20), region integer(10))"
         )
