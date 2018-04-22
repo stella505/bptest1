@@ -18,6 +18,37 @@ class TransferPage: NSObject {
         let hashCode = _DownloadHashCode.stringValue
         shell("ipfs catch" + hashCode)
     }
+    
+    @IBAction func OpenFolder(_ sender: Any) {
+//        let loadPath = _UploadFilePath.stringValue
+        let myFiledialog = NSOpenPanel()
+        myFiledialog.prompt = "Select path"
+        myFiledialog.worksWhenModal = true
+        myFiledialog.allowsMultipleSelection = false
+        myFiledialog.canChooseDirectories = true
+        myFiledialog.canChooseFiles = false
+        myFiledialog.resolvesAliases = true
+       
+        myFiledialog.begin { (result) in
+            Void.self
+            if result.rawValue == NSFileHandlingPanelOKButton{
+                let path = myFiledialog.url
+                print(path ?? "choosing")
+            }else{
+                print("NA")
+            }
+        }
+//        myFiledialog.beginSheetModalForWindow(window, completionHandler: { num in
+//            if num == NSModalResponseOK {
+//                let path = myFiledialog.URL
+//                print(path)
+//            } else {
+//                print("nothing chosen")
+//            }
+//        })
+    }
+    
+    
     @discardableResult
     func shell(_ args: String...) -> Int32 {
         

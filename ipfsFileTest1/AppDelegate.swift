@@ -31,7 +31,7 @@ var masterViewController: ViewController!
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
+    //let json = JSONSerialization.jsonObject(with: Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil) as! NSDictionary
 
 }
 

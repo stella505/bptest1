@@ -41,6 +41,13 @@
 			remoteGlobalIDString = 8383553D206B4F77001B2BFC;
 			remoteInfo = ipfsFileTest1;
 		};
+		83937B3E208C478900555043 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83937B3A208C478700555043 /* IPFSPrivateNet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83937B30208C478700555043;
+			remoteInfo = IPFSPrivateNet;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +76,7 @@
 		83835561206B4F77001B2BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		838510C82071E52A00F1E90D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		838510CB2071EBA900F1E90D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		83937B3A208C478700555043 /* IPFSPrivateNet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IPFSPrivateNet.xcodeproj; path = IPFSPrivateNet/IPFSPrivateNet.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 		83835540206B4F77001B2BFC /* ipfsFileTest1 */ = {
 			isa = PBXGroup;
 			children = (
+				83937B3A208C478700555043 /* IPFSPrivateNet.xcodeproj */,
 				83835541206B4F77001B2BFC /* AppDelegate.swift */,
 				83835543206B4F77001B2BFC /* ViewController.swift */,
 				83835545206B4F77001B2BFC /* Assets.xcassets */,
@@ -176,6 +185,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		83937B3B208C478700555043 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83937B3F208C478900555043 /* IPFSPrivateNet */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,7 +203,6 @@
 				8383553A206B4F77001B2BFC /* Sources */,
 				8383553B206B4F77001B2BFC /* Frameworks */,
 				8383553C206B4F77001B2BFC /* Resources */,
-				83EAC5BA20839A1200C3F0CC /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -240,12 +256,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Miaoshi Wu";
 				TargetAttributes = {
 					8383553D206B4F77001B2BFC = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					8383554F206B4F77001B2BFC = {
 						CreatedOnToolsVersion = 9.2;
@@ -270,6 +297,12 @@
 			mainGroup = 83835535206B4F76001B2BFC;
 			productRefGroup = 8383553F206B4F77001B2BFC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 83937B3B208C478700555043 /* Products */;
+					ProjectRef = 83937B3A208C478700555043 /* IPFSPrivateNet.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8383553D206B4F77001B2BFC /* ipfsFileTest1 */,
@@ -278,6 +311,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		83937B3F208C478900555043 /* IPFSPrivateNet */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = IPFSPrivateNet;
+			remoteRef = 83937B3E208C478900555043 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8383553C206B4F77001B2BFC /* Resources */ = {
@@ -305,23 +348,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		83EAC5BA20839A1200C3F0CC /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "echo \"download the ipfs...\"\nmkdir ipfsSrc\ncd ipfsSrc\nwget https://dist.ipfs.io/go-ipfs/v0.4.14/go-ipfs_v0.4.14_darwin-amd64.tar.gz\n\necho \"decompressing...\"\ntar xvfz go-ipfs.tar.gz\n\necho \"install...\"\ncd go-ipfs\n./install.sh\n\necho \"initial ipfs\"\nipfs init\n\necho \"daemoning...\"\nipfs daemon";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8383553A206B4F77001B2BFC /* Sources */ = {
@@ -399,6 +425,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -406,6 +433,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -456,6 +484,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -463,6 +492,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -496,12 +526,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ipfsFileTest1/ipfsFileTest1.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 24QP3W3KN7;
 				INFOPLIST_FILE = ipfsFileTest1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IPFS.ipfsFileTest1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SQLite-Bridge.h";
 				SWIFT_VERSION = 4.0;
 			};
@@ -512,12 +545,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ipfsFileTest1/ipfsFileTest1.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 24QP3W3KN7;
 				INFOPLIST_FILE = ipfsFileTest1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IPFS.ipfsFileTest1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SQLite-Bridge.h";
 				SWIFT_VERSION = 4.0;
 			};

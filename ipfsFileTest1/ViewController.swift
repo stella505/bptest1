@@ -62,7 +62,6 @@ class ViewController: NSViewController {
         //          preferences.removeObject(forKey:"session")
         //            LoginToDo()
         //        }
-        
         let data = db.query(sql: "select * from usertable")
         print(data)
         for i in 0..<data.count
